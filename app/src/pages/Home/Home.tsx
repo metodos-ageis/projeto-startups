@@ -1,5 +1,6 @@
-import { useAuth } from "@/store";
 import { Navigate } from "react-router-dom";
+
+import { useAuth } from "@/store";
 
 function Home() {
   const isAuthenticated = useAuth((state) => !!state.token);

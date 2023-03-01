@@ -1,5 +1,6 @@
+import { HTMLAttributes } from "react";
+
 import { classnames } from "@/utils";
-import React, { HTMLAttributes } from "react";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   elevation?: number;
