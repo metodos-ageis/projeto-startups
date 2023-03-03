@@ -58,7 +58,7 @@ export class Api {
 
   static async get<R, E = never>(
     path: string,
-    params: Record<string, string>,
+    params: Record<string, string> = {},
     headers = Api.getHeaders(),
     signal?: AbortSignal
   ) {
@@ -68,8 +68,8 @@ export class Api {
 
   static async post<R, B, E = never>(
     path: string,
-    params: Record<string, string>,
     body: B,
+    params: Record<string, string> = {},
     headers = Api.getHeaders(),
     signal?: AbortSignal
   ) {
@@ -84,8 +84,8 @@ export class Api {
 
   static async put<R, B, E = never>(
     path: string,
-    params: Record<string, string>,
     body: B,
+    params: Record<string, string> = {},
     headers = Api.getHeaders(),
     signal?: AbortSignal
   ) {
@@ -100,8 +100,8 @@ export class Api {
 
   static async patch<R, B, E = never>(
     path: string,
-    params: Record<string, string>,
     body: B,
+    params: Record<string, string> = {},
     headers = Api.getHeaders(),
     signal?: AbortSignal
   ) {
@@ -116,7 +116,7 @@ export class Api {
 
   static async delete<R, E = never>(
     path: string,
-    params: Record<string, string>,
+    params: Record<string, string> = {},
     headers = Api.getHeaders(),
     signal?: AbortSignal
   ) {

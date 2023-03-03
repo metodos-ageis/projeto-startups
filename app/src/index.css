@@ -11,4 +11,12 @@
     --color-secondary-dark: 81, 73, 155;
     --color-secondary-darker: 61, 53, 123;
   }
+
+  .textsize-inherit {
+    font-size: inherit;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 48;
 }
