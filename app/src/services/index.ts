@@ -1,1 +1,0 @@
-export { AppQueryClient } from "./client";

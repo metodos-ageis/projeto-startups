@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  [data-theme="default"] {
+    --color-primary: 62, 84, 172;
+    --color-primary-dark: 44, 62, 140;
+    --color-primary-darker: 26, 40, 108;
+    --color-secondary: 101, 93, 187;
+    --color-secondary-dark: 81, 73, 155;
+    --color-secondary-darker: 61, 53, 123;
+  }
+
+  .textsize-inherit {
+    font-size: inherit;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 48;
+}
