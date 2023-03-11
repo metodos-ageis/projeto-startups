@@ -2,7 +2,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { Home, Login, NotFound, Register } from "./pages";
+import { Home, Login, NotFound, Register, RegisterCompany } from "./pages";
 import { AppQueryClient } from "./services";
 
 import "./i18next";
@@ -11,6 +11,7 @@ const router = createBrowserRouter([
   { path: "/", element: <Home />, errorElement: <NotFound /> },
   { path: "login", element: <Login /> },
   { path: "register", element: <Register /> },
+  { path: "register-company", element: <RegisterCompany /> },
 ]);
 
 function App() {
