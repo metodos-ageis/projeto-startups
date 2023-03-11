@@ -19,7 +19,7 @@ function PasswordInput({ ...props }: PasswordProps) {
     <Input
       startIcon={<Icon>lock</Icon>}
       endIcon={
-        <IconButton onClick={toggleType}>
+        <IconButton onClick={toggleType} type="button">
           <Icon>{type === "password" ? "visibility" : "visibility_off"}</Icon>
         </IconButton>
       }
