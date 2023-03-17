@@ -19,7 +19,7 @@ function Selector<T extends React.Key>({ label, items }: Props<T>) {
   const [selected, setSelected] = useState(items[0]);
 
   return (
-    <div className={classnames("group flex flex-col gap-1")}>
+    <div className={classnames("group flex flex-col gap-1 relative")}>
       {label && (
         <label
           className="text-sm group-focus-within:text-primary transition-[color] duration-300"
@@ -28,23 +28,17 @@ function Selector<T extends React.Key>({ label, items }: Props<T>) {
           {label}
         </label>
       )}
-      <Listbox
-        value={selected}
-        onChange={(e) => {
-          console.log("e", e);
-          setSelected(e);
-        }}
-      >
+      <Listbox value={selected} onChange={setSelected}>
         <Listbox.Button
           className={classnames(
-            "border-2 border-gray-700 rounded-sm",
-            "w-full flex gap-2 items-center px-1",
+            "border-2 border-gray-400 rounded-xl",
+            "w-full flex gap-2 items-center px-2",
             "focus-within:border-primary transition-[border-color] duration-300 py-1"
           )}
         >
           {selected?.name ?? "-"}
         </Listbox.Button>
-        <Listbox.Options className="bg-slate-100 shadow-md">
+        <Listbox.Options className="absolute top-[100%] left-0 right-0 bg-white shadow-lg rounded-xl overflow-hidden">
           {items.map((item) => (
             <Listbox.Option
               key={item.id}

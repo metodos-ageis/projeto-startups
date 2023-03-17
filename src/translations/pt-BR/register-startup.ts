@@ -1,5 +1,5 @@
 export default {
-  Title: "Cadastrar incubada",
+  Title: "Cadastro de incubadas",
   TitleCol1: "Incubada",
   TitleCol2: "Representante",
   Form: {
@@ -9,15 +9,19 @@ export default {
     Description: "Descrição",
     Cnpj: "CNPJ",
     Goal: "Objetivo",
-    ProjectTime: "Tempo do projeto (dias)",
+    ProjectTime: "Tempo do projeto",
     Challenges: "Desafios",
     TeamSize: "Tamanho do time",
-    ProjectStarted: "Data de início do projeto",
+    ProjectStarted: "Data de início",
     Website: "Website",
     IP: "Propriedade intelectual",
     Resources: "Recursos",
     ResourcesNeeded: "Recursos necessários",
     MVP: "MVP",
     IncomingModel: "Modelo de receita",
-  }
+  },
+  Controls: {
+    Back: "Voltar",
+    Next: "Próximo",
+  },
 };

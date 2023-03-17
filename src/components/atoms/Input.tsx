@@ -35,24 +35,32 @@ function Input({
       )}
       <div
         className={twMerge(
-          "border-2 border-gray-700 rounded-xl",
+          "border-2 border-gray-400 rounded-xl",
           "group-focus-within:border-primary transition-[border-color] duration-300",
           "w-full flex gap-2 items-center px-1",
           inputRootClassName
         )}
         {...inputRootRest}
       >
-        <div className="mx-1 flex items-center justify-center group-focus-within:text-primary transition-[color] duration-300">
-          {startIcon}
-        </div>
+        {startIcon && (
+          <div className="mx-1 flex items-center justify-center group-focus-within:text-primary transition-[color] duration-300">
+            {startIcon}
+          </div>
+        )}
         <input
           id={id}
-          className="py-1 my-0.5 text-sm outline-none w-full bg-transparent"
+          className={twMerge(
+            "py-1 my-0.5 text-sm outline-none w-full bg-transparent",
+            !endIcon && "pr-2",
+            !startIcon && "pl-2"
+          )}
           {...props}
         />
-        <div className="mx-1 flex items-center justify-center group-focus-within:text-primary transition-[color] duration-300">
-          {endIcon}
-        </div>
+        {endIcon && (
+          <div className="mx-1 flex items-center justify-center group-focus-within:text-primary transition-[color] duration-300">
+            {endIcon}
+          </div>
+        )}
       </div>
     </div>
   );
