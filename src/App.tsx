@@ -16,7 +16,7 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div data-theme="default" className="h-screen w-screen bg-slate-200">
+    <div data-theme="default" className="h-screen w-screen bg-white">
       <QueryClientProvider client={AppQueryClient.get()}>
         <RouterProvider router={router} />
         <ReactQueryDevtools initialIsOpen={false} />

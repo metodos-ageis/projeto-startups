@@ -1,12 +1,11 @@
 import { ButtonHTMLAttributes } from "react";
+import { twMerge } from "tailwind-merge";
 
 import LoadingDots from "./LoadingDots";
 
-import { classnames } from "@/utils";
-
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "contained" | "outlined" | "text";
-  color?: "primary" | "secondary";
+  color?: "primary" | "secondary" | "action-text";
   loading?: boolean;
   disabled?: boolean;
 }
@@ -22,8 +21,8 @@ function Button({
 }: Props) {
   return (
     <button
-      className={classnames(
-        "px-4 py-2 rounded h-10",
+      className={twMerge(
+        "px-4 py-1.5 rounded-xl h-9",
         "transition-[background-color] duration-300",
 
         !(disabled || loading) &&

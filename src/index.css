@@ -4,12 +4,15 @@
 
 @layer base {
   [data-theme="default"] {
-    --color-primary: 62, 84, 172;
-    --color-primary-dark: 44, 62, 140;
-    --color-primary-darker: 26, 40, 108;
-    --color-secondary: 101, 93, 187;
-    --color-secondary-dark: 81, 73, 155;
-    --color-secondary-darker: 61, 53, 123;
+    --color-primary: 82, 112, 255;
+    --color-primary-dark: 62, 92, 223;
+    --color-primary-darker: 42, 72, 191;
+    --color-secondary: 55, 163, 165;
+    --color-secondary-dark: 35, 143, 145;
+    --color-secondary-darker: 15, 123, 125;
+    --color-typography: 109, 107, 108;
+    --color-typography-dark: 89, 87, 88;
+    --color-typography-darker: 69, 67, 68;
   }
 
   .textsize-inherit {

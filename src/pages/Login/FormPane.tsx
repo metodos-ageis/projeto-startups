@@ -20,11 +20,8 @@ function FormPane() {
   });
 
   return (
-    <form
-      className="flex flex-col items-center gap-4 shadow-lg p-8 bg-slate-100"
-      onSubmit={onSubmit}
-    >
-      <Text variant="h3" className="font-normal">
+    <form className="flex flex-col items-center gap-8 p-8" onSubmit={onSubmit}>
+      <Text variant="h2" className="text-primary font-semibold">
         {t("Login")}
       </Text>
 
@@ -48,11 +45,11 @@ function FormPane() {
       </div>
 
       <div className="flex flex-col items-center w-full">
-        <Link className="text-sm py-1" to="/register">
+        <Link className="text-sm py-0.5 text-typography" to="/register">
           {t("NewUser")}
         </Link>
-        <Text className="lowercase text-sm">{t("Or")}</Text>
-        <Link className="text-sm py-1" to="/forgot-password">
+        <Text className="lowercase text-sm text-typography">{t("Or")}</Text>
+        <Link className="text-sm py-0.5 text-typography" to="/forgot-password">
           {t("ForgotPassword")}
         </Link>
       </div>
@@ -61,6 +58,7 @@ function FormPane() {
         className="w-full"
         typeof="submit"
         type="submit"
+        color="secondary"
         loading={login.isLoading}
         disabled={!email || !password}
       >

@@ -11,12 +11,20 @@ module.exports = {
         "secondary-dark": "rgba(var(--color-secondary-dark), <alpha-value>)",
         "secondary-darker":
           "rgba(var(--color-secondary-darker), <alpha-value>)",
+        typography: "rgba(var(--color-typography), <alpha-value>)",
+        "typography-dark": "rgba(var(--color-typography-dark), <alpha-value>)",
+        "typography-darker":
+          "rgba(var(--color-typography-darker), <alpha-value>)",
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
       },
     },
   },
   safelist: [
     {
-      pattern: /(bg|text|border)-(primary|secondary)((-dark)|(-darker))?/,
+      pattern:
+        /(bg|text|border)-(primary|secondary|typography)((-dark)|(-darker))?/,
       variants: ["responsive", "hover", "focus", "active"],
     },
   ],
