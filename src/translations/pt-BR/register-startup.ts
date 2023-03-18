@@ -23,5 +23,6 @@ export default {
   Controls: {
     Back: "Voltar",
     Next: "Próximo",
+    Submit: "Enviar",
   },
 };

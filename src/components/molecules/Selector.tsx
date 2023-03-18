@@ -1,5 +1,5 @@
 import { Listbox } from "@headlessui/react";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 
 import { classnames, getId } from "@/utils";
 
@@ -12,11 +12,16 @@ export interface SelectorItem<T extends React.Key> {
 interface Props<T extends React.Key> {
   label?: string;
   items: SelectorItem<T>[];
+  onChange?: (value: T) => void;
 }
 
-function Selector<T extends React.Key>({ label, items }: Props<T>) {
+function Selector<T extends React.Key>({ label, items, onChange }: Props<T>) {
   const id = useMemo(() => getId(), []);
   const [selected, setSelected] = useState(items[0]);
+
+  useEffect(() => {
+    onChange?.(selected.id);
+  }, []);
 
   return (
     <div className={classnames("group flex flex-col gap-1 relative")}>
