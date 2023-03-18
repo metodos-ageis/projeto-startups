@@ -11,7 +11,7 @@ class ApiError<E> extends Error {
 }
 
 export class Api {
-  static readonly BASE_URL = new URL("https://api.example.com");
+  static readonly BASE_URL = new URL("http://localhost:3000/");
 
   private static getURL(path: string, params: Record<string, string>) {
     const url = new URL(path, Api.BASE_URL);
