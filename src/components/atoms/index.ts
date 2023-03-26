@@ -8,5 +8,7 @@ export { default as TextArea } from "./TextArea";
 export { default as StepperProggress } from "./StepperProggress";
 export { default as RadioGroup } from "./RadioGroup";
 
+export { default as Fade } from "./transitions/Fade";
+
 export type { StepperProgressProps } from "./StepperProggress";
 export type { InputProps } from "./Input";

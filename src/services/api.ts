@@ -1,10 +1,15 @@
 import { useAuth } from "@/store";
 
-class ApiError<E> extends Error {
+type DefaultError = {
+  message: string;
+  statusCode: number;
+};
+export class ApiError<E = DefaultError> extends Error {
   constructor(
     message: string,
     public readonly status: number,
-    public readonly data: E | string
+    public readonly data?: E,
+    public readonly raw?: string
   ) {
     super(message);
   }
@@ -42,14 +47,15 @@ export class Api {
     const response = await fetch(url.toString(), options);
 
     if (!response.ok) {
-      let data: E | string;
+      let data: E | undefined;
+      let raw: string | undefined;
       try {
         data = await response.json();
-      } catch (e) {
-        data = await response.text();
+      } catch {
+        raw = await response.text();
       }
 
-      throw new ApiError(response.statusText, response.status, data);
+      throw new ApiError(response.statusText, response.status, data, raw);
     }
 
     const data = await response.json();

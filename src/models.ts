@@ -4,7 +4,7 @@ export interface Company {
   description: string;
   sector: string;
   goal: string;
-  cnpj: string;
+  cnpj: number;
   project_time: number;
   challenges: string;
   team_size: number;
