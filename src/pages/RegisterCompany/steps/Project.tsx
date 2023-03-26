@@ -75,6 +75,7 @@ function Project() {
           label={t("Form.TeamSize")}
           onChange={onChangeTeam}
           value={team}
+          min={0}
         />
         <Input
           name="website"

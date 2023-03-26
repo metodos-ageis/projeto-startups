@@ -9,7 +9,7 @@ interface Store {
   description: State<string>;
   sector: State<string>;
   goal: State<string>;
-  cnpj: State<string>;
+  cnpj: State<number>;
   initial_capital: State<number>;
   project_time: State<number>;
   challenges: State<string>;
@@ -41,7 +41,7 @@ const useCompanyForm = create<Store>((set, get) => ({
     setter: (value) => set({ goal: { ...get().goal, value } }),
   },
   cnpj: {
-    value: "",
+    value: 0,
     setter: (value) => set({ cnpj: { ...get().cnpj, value } }),
   },
   initial_capital: {
@@ -115,7 +115,6 @@ export function useCompanyFormData() {
       sector,
       goal,
       cnpj,
-      initial_capital,
       project_time,
       challenges,
       team_size,
@@ -135,7 +134,6 @@ export function useCompanyFormData() {
           sector: sector.value,
           goal: goal.value,
           cnpj: cnpj.value,
-          initial_capital: initial_capital.value,
           project_time: project_time.value,
           challenges: challenges.value,
           team_size: team_size.value,

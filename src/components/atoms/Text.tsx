@@ -2,7 +2,7 @@ import { HTMLAttributes } from "react";
 
 import { classnames } from "@/utils";
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+interface Props extends Omit<HTMLAttributes<HTMLDivElement>, "color"> {
   variant?:
     | "h1"
     | "h2"
@@ -13,9 +13,10 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
     | "body1"
     | "body2"
     | "caption";
+  color?: "primary" | "secondary" | "error" | "success";
 }
 
-function Text({ variant = "body1", className, ...props }: Props) {
+function Text({ variant = "body1", color, className, ...props }: Props) {
   return (
     <div
       className={classnames(
@@ -28,6 +29,10 @@ function Text({ variant = "body1", className, ...props }: Props) {
         variant === "body1" && "text-base",
         variant === "body2" && "text-sm",
         variant === "caption" && "text-xs",
+        color === "primary" && "text-primary",
+        color === "secondary" && "text-secondary",
+        color === "error" && "text-red-600",
+        color === "success" && "text-green-500",
         className
       )}
       {...props}
