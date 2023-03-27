@@ -10,7 +10,7 @@ import {
 } from "@/components/atoms/table";
 import TableContainer from "@/components/atoms/table/TableContainer";
 import { Selector, SelectorItem } from "@/components/molecules";
-import { Header } from "@/components/organisms";
+import { Header, StartupHeader } from "@/components/organisms";
 import { useEventListener } from "@/hooks";
 import { useCompanyFormField } from "@/store";
 
@@ -32,7 +32,7 @@ function UpdateProgress() {
 
   return (
     <>
-      <Header />
+      <StartupHeader />
       <div className="mx-8 mt-12 relative z-10">
         <Text variant="h5" className="font-medium">
           Ponto de partida
