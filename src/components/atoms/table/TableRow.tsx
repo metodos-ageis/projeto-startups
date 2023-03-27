@@ -11,7 +11,8 @@ function TableRow({ className, ...props }: Props) {
     <tr
       className={twMerge(
         className,
-        "transition-colors duration-200",
+        "group/row",
+        "transition-colors duration-200 bg-white",
         striped && "even:bg-slate-100",
         hover && "hover:bg-slate-200"
       )}

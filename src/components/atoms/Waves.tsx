@@ -4,14 +4,21 @@ import Box from "./Box";
 
 type Props = {
   className?: string;
+  size?: "sm" | "md" | "lg";
 };
 
-function Waves({ className }: Props) {
+function Waves({ className, size = "lg" }: Props) {
   return (
     <Box
       as="img"
       src="assets/waves.svg"
-      className={twMerge("absolute bottom-0 left-0 z-0", className)}
+      className={twMerge(
+        "absolute left-0 z-0",
+        size === "sm" && "bottom-[-7.5rem]",
+        size === "md" && "bottom-[-3.5rem]",
+        size === "lg" && "bottom-0",
+        className
+      )}
     />
   );
 }

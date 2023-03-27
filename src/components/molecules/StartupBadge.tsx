@@ -8,12 +8,12 @@ function StartupBadge() {
     <div
       className={twMerge(
         "grid gap-4 grid-cols-[auto_1fr] min-w-[32rem]",
-        "bg-slate-200 p-4 rounded-xl"
+        "bg-slate-200 py-2 px-6 rounded-xl"
       )}
     >
-      <div className="bg-gray-500 w-11 h-11" />
-      <div className="w-full">
-        <div className="flex justify-between">
+      <img src="assets/tmp/startup.svg" className="w-11 h-11" />
+      <div className="w-full flex justify-between items-center">
+        <div>
           <Text
             variant="h4"
             uppercase
@@ -23,17 +23,17 @@ function StartupBadge() {
           </Text>
           <Text
             variant="caption"
-            className="whitespace-nowrap flex items-end text-typography font-semibold"
-          >
-            Processo seletivo
-          </Text>
-        </div>
-        <div className="flex justify-between">
-          <Text
-            variant="caption"
             className="font-bold tracking-wider whitespace-nowrap text-typography"
           >
             Nivel 2
+          </Text>
+        </div>
+        <div>
+          <Text
+            variant="caption"
+            className="whitespace-nowrap flex items-end text-typography font-semibold"
+          >
+            Processo seletivo
           </Text>
 
           <Text

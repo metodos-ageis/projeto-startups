@@ -6,7 +6,7 @@ import CompanyInfo from "./steps/CompanyInfo";
 import Project from "./steps/Project";
 import Resources from "./steps/Resources";
 
-import { Text, Button, Fade } from "@/components/atoms";
+import { Text, Button, Fade, Waves } from "@/components/atoms";
 import { Stepper } from "@/components/molecules";
 import type { StepperRef } from "@/components/molecules";
 import { useError, useEventCallback } from "@/hooks";
@@ -29,9 +29,18 @@ function RegisterCompany() {
 
   const steps = useMemo(
     () => [
-      { component: <CompanyInfo />, title: t("Meta.SectionCompany") },
-      { component: <Resources />, title: t("Meta.SectionResources") },
-      { component: <Project />, title: t("Meta.SectionProject") },
+      {
+        component: <CompanyInfo />,
+        title: t("registerStartup:Meta.SectionCompany"),
+      },
+      {
+        component: <Resources />,
+        title: t("registerStartup:Meta.SectionResources"),
+      },
+      {
+        component: <Project />,
+        title: t("registerStartup:Meta.SectionProject"),
+      },
     ],
     []
   );
@@ -98,10 +107,7 @@ function RegisterCompany() {
           <img src="assets/logo.jpeg" className="w-96" />
         </div>
       </div>
-      <img
-        src="assets/waves.svg"
-        className="absolute left-0 bottom-[-7rem] z-0"
-      />
+      <Waves size="sm" />
     </div>
   );
 }
