@@ -2,17 +2,27 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { Home, Login, NotFound, Register, RegisterCompany, UpdateProgress } from "./pages";
+import { Routes } from "./constants";
+import {
+  Dashboard,
+  Home,
+  Login,
+  NotFound,
+  Register,
+  RegisterCompany,
+  UpdateProgress,
+} from "./pages";
 import { AppQueryClient } from "./services";
 
 import "./i18next";
 
 const router = createBrowserRouter([
-  { path: "/", element: <Home />, errorElement: <NotFound /> },
-  { path: "login", element: <Login /> },
-  { path: "register", element: <Register /> },
-  { path: "register-company", element: <RegisterCompany /> },
-  { path: "update-progress", element: <UpdateProgress /> },
+  { path: Routes.HOME, element: <Home />, errorElement: <NotFound /> },
+  { path: Routes.LOGIN, element: <Login /> },
+  { path: Routes.REGISTER, element: <Register /> },
+  { path: Routes.REGISTER_COMPANY, element: <RegisterCompany /> },
+  { path: Routes.UPDATE_PROGRESS, element: <UpdateProgress /> },
+  { path: Routes.DASHBOARD, element: <Dashboard /> },
 ]);
 
 function App() {
