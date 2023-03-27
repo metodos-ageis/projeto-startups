@@ -18,6 +18,7 @@ export {
   TableRow,
   TableContainer,
   TableFoot,
+  TableCellInput,
 } from "./table";
 
 export { default as Fade } from "./transitions/Fade";

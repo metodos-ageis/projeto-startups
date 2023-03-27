@@ -1,6 +1,6 @@
-import { TableCell, TableCellInput, TableRow, Text } from "@/components/atoms";
+import { TableCell, TableRow, Text, TextArea } from "@/components/atoms";
 
-function Goals() {
+function Canvas() {
   return (
     <TableRow>
       <TableCell noWrap>0.3. Metas e objetivos</TableCell>
@@ -10,9 +10,11 @@ function Goals() {
           meses? O que vocês querem atingir nesse período?
         </Text>
       </TableCell>
-      <TableCellInput />
+      <TableCell>
+        <TextArea />
+      </TableCell>
     </TableRow>
   );
 }
 
-export default Goals;
+export default Canvas;

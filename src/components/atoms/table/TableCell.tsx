@@ -5,11 +5,11 @@ import Box from "../Box";
 
 import { useTableContext, useTableRowContext } from "@/components/context";
 
-interface Props extends TdHTMLAttributes<HTMLTableCellElement> {
+export interface TableCellProps extends TdHTMLAttributes<HTMLTableCellElement> {
   noWrap?: boolean;
 }
 
-function TableCell({ className, noWrap, ...props }: Props) {
+function TableCell({ className, noWrap, ...props }: TableCellProps) {
   const { bordered } = useTableContext();
   const group = useTableRowContext();
   const element = group === "header" ? "th" : "td";

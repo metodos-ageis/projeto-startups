@@ -1,4 +1,4 @@
-import { TableCell, TableRow, Text, TextArea } from "@/components/atoms";
+import { TableCell, TableCellInput, TableRow, Text } from "@/components/atoms";
 
 function Challenges() {
   return (
@@ -10,9 +10,7 @@ function Challenges() {
           seu projeto vivencia atualmente?
         </Text>
       </TableCell>
-      <TableCell>
-        <TextArea />
-      </TableCell>
+      <TableCellInput />
     </TableRow>
   );
 }

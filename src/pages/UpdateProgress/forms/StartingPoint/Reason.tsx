@@ -1,4 +1,4 @@
-import { TableCell, TableRow, Text, TextArea } from "@/components/atoms";
+import { TableCell, TableCellInput, TableRow, Text } from "@/components/atoms";
 
 function Reason() {
   return (
@@ -21,9 +21,7 @@ function Reason() {
           </li>
         </ol>
       </TableCell>
-      <TableCell>
-        <TextArea />
-      </TableCell>
+      <TableCellInput />
     </TableRow>
   );
 }

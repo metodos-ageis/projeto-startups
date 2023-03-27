@@ -1,4 +1,4 @@
-import { TableCell, TableRow, TextArea } from "@/components/atoms";
+import { TableCell, TableRow, TableCellInput } from "@/components/atoms";
 function Time() {
   return (
     <TableRow>
@@ -10,9 +10,7 @@ function Time() {
       <TableCell>
         Há quanto tempo vocês estão desenvolvendo esse projeto?
       </TableCell>
-      <TableCell>
-        <TextArea />
-      </TableCell>
+      <TableCellInput placeholder="Digite aqui..." />
     </TableRow>
   );
 }

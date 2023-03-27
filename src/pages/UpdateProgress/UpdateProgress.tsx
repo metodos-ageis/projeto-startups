@@ -1,6 +1,5 @@
-import { StartingPoint } from "./forms/StartingPoint";
+import { StartingPoint, Structure } from "./forms";
 
-import { Waves } from "@/components/atoms";
 import { StartupHeader } from "@/components/organisms";
 
 function UpdateProgress() {
@@ -9,8 +8,8 @@ function UpdateProgress() {
       <StartupHeader />
       <div className="mx-8 mt-12 relative z-10">
         <StartingPoint />
+        <Structure />
       </div>
-      <Waves size="md" />
     </>
   );
 }
