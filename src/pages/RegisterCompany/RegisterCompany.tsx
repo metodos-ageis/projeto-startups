@@ -6,7 +6,7 @@ import CompanyInfo from "./steps/CompanyInfo";
 import Project from "./steps/Project";
 import Resources from "./steps/Resources";
 
-import { Text, Button, Fade } from "@/components/atoms";
+import { Text, Button, Fade, Waves } from "@/components/atoms";
 import { Stepper } from "@/components/molecules";
 import type { StepperRef } from "@/components/molecules";
 import { useError, useEventCallback } from "@/hooks";
@@ -29,9 +29,18 @@ function RegisterCompany() {
 
   const steps = useMemo(
     () => [
-      { component: <CompanyInfo />, title: "Informações da empresa" },
-      { component: <Resources />, title: "Recursos da empresa" },
-      { component: <Project />, title: "Informações do projeto I" },
+      {
+        component: <CompanyInfo />,
+        title: t("registerStartup:Meta.SectionCompany"),
+      },
+      {
+        component: <Resources />,
+        title: t("registerStartup:Meta.SectionResources"),
+      },
+      {
+        component: <Project />,
+        title: t("registerStartup:Meta.SectionProject"),
+      },
     ],
     []
   );
@@ -55,7 +64,7 @@ function RegisterCompany() {
       <div className="w-full grid grid-rows-1 grid-cols-[auto_1fr] gap-4 h-[70vh] relative z-10">
         <form className="max-w-sm" onSubmit={onSubmit}>
           <Text variant="h3" className="font-semibold text-center mb-8">
-            {t("registerStartup:Title")}
+            {t("registerStartup:Meta.Title")}
           </Text>
           <Stepper ref={stepperRef} steps={steps} onChange={onChangeStep} />
           <div className="flex justify-between items-center mt-8">
@@ -98,10 +107,7 @@ function RegisterCompany() {
           <img src="assets/logo.jpeg" className="w-96" />
         </div>
       </div>
-      <img
-        src="assets/waves.svg"
-        className="absolute left-0 bottom-[-7rem] z-0"
-      />
+      <Waves size="sm" />
     </div>
   );
 }

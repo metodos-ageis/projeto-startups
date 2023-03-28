@@ -1,13 +1,17 @@
 import { ButtonHTMLAttributes } from "react";
+import { useNavigate } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
 
 import LoadingDots from "./LoadingDots";
+
+import { useEventCallback } from "@/hooks";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "contained" | "outlined" | "text";
   color?: "primary" | "secondary" | "action-text";
   loading?: boolean;
   disabled?: boolean;
+  href?: string;
 }
 
 function Button({
@@ -17,8 +21,19 @@ function Button({
   loading,
   className,
   children,
+  href,
+  onClick,
   ...props
 }: Props) {
+  const navigate = useNavigate();
+  const _onClick: typeof onClick = useEventCallback((e) => {
+    if (href) {
+      e.preventDefault();
+      navigate(href);
+    } else {
+      onClick?.(e);
+    }
+  });
   return (
     <button
       className={twMerge(
@@ -50,6 +65,7 @@ function Button({
         className
       )}
       disabled={disabled}
+      onClick={_onClick}
       {...props}
     >
       {loading ? <LoadingDots /> : children}

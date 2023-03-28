@@ -1,7 +1,10 @@
 export default {
-  Title: "Cadastro de incubadas",
-  TitleCol1: "Incubada",
-  TitleCol2: "Representante",
+  Meta: {
+    Title: "Cadastro de incubadas",
+    SectionCompany: "Informações da empresa",
+    SectionResources: "Recursos da empresa",
+    SectionProject: "Informações do projeto",
+  },
   Form: {
     Name: "Nome da incubada",
     Monetary: "Capital inicial",

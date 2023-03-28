@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 
 import ControlPanel from "./ControlPanel";
 
-import { Button, Icon, Text } from "@/components/atoms";
+import { Button, Icon, Text, Waves } from "@/components/atoms";
 import { useAuth } from "@/store";
 
 function Home() {
@@ -33,7 +33,7 @@ function Home() {
 
       <ControlPanel />
 
-      <img src="assets/waves.svg" className="absolute bottom-0 left-0" />
+      <Waves />
     </div>
   );
 }
