@@ -11,6 +11,7 @@ import {
   Register,
   RegisterCompany,
   UpdateProgress,
+  MainPage,
 } from "./pages";
 import { AppQueryClient } from "./services";
 
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
   { path: Routes.REGISTER_COMPANY, element: <RegisterCompany /> },
   { path: Routes.UPDATE_PROGRESS, element: <UpdateProgress /> },
   { path: Routes.DASHBOARD, element: <Dashboard /> },
+  { path: Routes.MAIN_PAGE, element: <MainPage /> },
 ]);
 
 function App() {
