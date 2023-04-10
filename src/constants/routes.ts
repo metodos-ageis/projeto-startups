@@ -5,4 +5,5 @@ export default {
   LOGIN: "/login",
   REGISTER: "/register",
   REGISTER_COMPANY: "/register-company",
+  MAIN_PAGE: "/main-page",
 };

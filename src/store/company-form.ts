@@ -21,6 +21,8 @@ interface Store {
   resources_needed: State<string>;
   mvp: State<boolean>;
   incoming_model: State<string>;
+  level: State<number>;
+  sprint: State<number>;
 }
 
 const useCompanyForm = create<Store>((set, get) => ({
@@ -92,6 +94,14 @@ const useCompanyForm = create<Store>((set, get) => ({
     setter: (value) =>
       set({ incoming_model: { ...get().incoming_model, value } }),
   },
+  level: {
+    value: 0,
+    setter: (value) => set({ level: { ...get().level, value } }),
+  },
+  sprint: {
+    value: 0,
+    setter: (value) => set({ sprint: { ...get().sprint, value } }),
+  },
 }));
 
 export function useCompanyFormField<Key extends keyof Store>(
@@ -125,6 +135,8 @@ export function useCompanyFormData() {
       resources_needed,
       mvp,
       incoming_model,
+      level,
+      sprint,
     } = store;
     return useMemo(
       () =>
@@ -144,6 +156,8 @@ export function useCompanyFormData() {
           resources_needed: resources_needed.value,
           mvp: mvp.value,
           incoming_model: incoming_model.value,
+          level: level.value,
+          sprint: sprint.value,
         } as CreateCompanyPayload),
       [store]
     );
