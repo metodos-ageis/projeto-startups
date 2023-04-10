@@ -1,20 +1,21 @@
 import { TableCell, TableCellInput, TableRow, Text } from "@/components/atoms";
 
-function Canvas() {
+function ValueDefinition() {
   return (
     <TableRow>
-      <TableCell noWrap>1.1. Canvas</TableCell>
+      <TableCell noWrap>
+        2.2. Definição da solução e proposta de valor
+      </TableCell>
       <TableCell>
         <Text className="text-sm w-96">
-          Verificar se foi realizada a estruturação das hipóteses do modelo de
-          negócios, por meio do Science Business Model, e se as mesmas foram
-          validadas junto aos potenciais clientes da solução.
+          Verificar se a solução e a proposta de valor foram definidas e
+          validadas e se respondem ao problema identificado junto aos potenciais
+          clientes.
         </Text>
       </TableCell>
       <TableCell>
         <Text className="text-sm">
-          Vocês já estruturam o Canvas com as hipóteses do negócio? Elas já
-          foram validadas?
+          Quais os benefícios oferecidos pela sua solução (proposta de valor)?
         </Text>
       </TableCell>
       <TableCellInput placeholder="Digite aqui..." />
@@ -28,4 +29,4 @@ function Canvas() {
   );
 }
 
-export default Canvas;
+export default ValueDefinition;

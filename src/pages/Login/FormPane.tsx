@@ -61,9 +61,15 @@ function FormPane() {
         color="secondary"
         loading={login.isLoading}
         disabled={!email || !password}
+        error={login.isError}
+        helperText={login.error ? t("Error.InvalidCredentials") : undefined}
       >
         {t("SignIn")}
       </Button>
+
+      <Text className="text-sm text-red-500">
+        {login.isError && t("Error.InvalidCredentials")}
+      </Text>
     </form>
   );
 }

@@ -1,22 +1,27 @@
 import { useMutation } from "@tanstack/react-query";
 
+import { Api, ApiError } from "../api";
+
 import { useAuth } from "@/store";
-import { sleep } from "@/utils";
 
 interface Payload {
   email: string;
   password: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+interface Response {
+  token: string;
+}
+
 export async function login(email: string, password: string) {
-  await sleep(1000);
-  useAuth.getState().setToken("debug-token");
-  // return Api.post("/auth", { email, password });
+  return Api.post<Response, Payload, ApiError>("/auth", { email, password });
 }
 
 export function useLogin() {
-  return useMutation({
+  return useMutation<Response, ApiError, Payload>({
     mutationFn: ({ email, password }: Payload) => login(email, password),
+    onSuccess: (data) => {
+      useAuth.getState().setToken(data.token);
+    },
   });
 }

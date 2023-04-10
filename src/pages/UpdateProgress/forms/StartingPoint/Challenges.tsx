@@ -10,7 +10,7 @@ function Challenges() {
           seu projeto vivencia atualmente?
         </Text>
       </TableCell>
-      <TableCellInput />
+      <TableCellInput placeholder="Digite aqui..." />
     </TableRow>
   );
 }

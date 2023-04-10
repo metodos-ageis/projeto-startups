@@ -1,23 +1,20 @@
 import { TableCell, TableCellInput, TableRow, Text } from "@/components/atoms";
 
-function Canvas() {
+function FeedbackCycles() {
   return (
     <TableRow>
-      <TableCell noWrap>1.1. Canvas</TableCell>
+      <TableCell noWrap>3.8. Ciclos de Feedback</TableCell>
       <TableCell>
         <Text className="text-sm w-96">
-          Verificar se foi realizada a estruturação das hipóteses do modelo de
-          negócios, por meio do Science Business Model, e se as mesmas foram
-          validadas junto aos potenciais clientes da solução.
+          Verificar o número de ciclos de feedback realizados pela equipe.
         </Text>
       </TableCell>
       <TableCell>
         <Text className="text-sm">
-          Vocês já estruturam o Canvas com as hipóteses do negócio? Elas já
-          foram validadas?
+          Quantas vezes você já rodou ciclos de feedback (construir, medir,
+          aprender)?
         </Text>
       </TableCell>
-      <TableCellInput placeholder="Digite aqui..." />
       <TableCellInput placeholder="Digite aqui..." />
       <TableCellInput placeholder="Digite aqui..." />
       <TableCellInput placeholder="Digite aqui..." />
@@ -28,4 +25,4 @@ function Canvas() {
   );
 }
 
-export default Canvas;
+export default FeedbackCycles;

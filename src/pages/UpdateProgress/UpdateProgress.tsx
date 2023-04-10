@@ -1,4 +1,4 @@
-import { StartingPoint, Structure } from "./forms";
+import { Market, Solution, StartingPoint, Structure } from "./forms";
 
 import { StartupHeader } from "@/components/organisms";
 
@@ -9,6 +9,8 @@ function UpdateProgress() {
       <div className="mx-8 mt-12 relative z-10">
         <StartingPoint />
         <Structure />
+        <Solution />
+        <Market />
       </div>
     </>
   );

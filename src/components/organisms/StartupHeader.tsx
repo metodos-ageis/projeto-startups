@@ -1,8 +1,8 @@
 import { twMerge } from "tailwind-merge";
 
-import { StartupBadge } from "../molecules";
+import { StartupBadge, IconButton } from "../molecules";
 
-import { Surface } from "@/components/atoms";
+import { Icon, Surface } from "@/components/atoms";
 
 interface Props {
   className?: string;
@@ -16,7 +16,12 @@ function Header({ className }: Props) {
         className
       )}
     >
-      <img src="assets/logo.jpeg" className="w-44 my-8" />
+      <div className="grid grid-cols-[repeat(3,_auto)] justify-between items-center w-full">
+        <IconButton className="ml-8">
+          <Icon fontSize="2extra-large">arrow_back</Icon>
+        </IconButton>
+        <img src="assets/logo.jpeg" className="w-44 my-8" />
+      </div>
       <StartupBadge />
     </Surface>
   );

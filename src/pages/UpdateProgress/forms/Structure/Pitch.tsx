@@ -1,22 +1,16 @@
 import { TableCell, TableCellInput, TableRow, Text } from "@/components/atoms";
 
-function Canvas() {
+function Pitch() {
   return (
     <TableRow>
-      <TableCell noWrap>1.1. Canvas</TableCell>
+      <TableCell noWrap>1.1. Pitch</TableCell>
       <TableCell>
         <Text className="text-sm w-96">
-          Verificar se foi realizada a estruturação das hipóteses do modelo de
-          negócios, por meio do Science Business Model, e se as mesmas foram
-          validadas junto aos potenciais clientes da solução.
+          Verificar se a equipe possui uma apresentação de pitch já validada e
+          bem estruturada para as suas necessidades.
         </Text>
       </TableCell>
-      <TableCell>
-        <Text className="text-sm">
-          Vocês já estruturam o Canvas com as hipóteses do negócio? Elas já
-          foram validadas?
-        </Text>
-      </TableCell>
+      <TableCell></TableCell>
       <TableCellInput placeholder="Digite aqui..." />
       <TableCellInput placeholder="Digite aqui..." />
       <TableCellInput placeholder="Digite aqui..." />
@@ -28,4 +22,4 @@ function Canvas() {
   );
 }
 
-export default Canvas;
+export default Pitch;

@@ -13,4 +13,8 @@ export default {
     SponsorTitle: "Programa de Incubação.",
     SponsorSubtitle: "Parceria entre:",
   },
+
+  Error: {
+    InvalidCredentials: "Usuário ou senha inválidos",
+  },
 };
