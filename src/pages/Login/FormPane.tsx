@@ -20,13 +20,14 @@ function FormPane() {
   });
 
   return (
-    <form className="flex flex-col items-center gap-8 p-8" onSubmit={onSubmit}>
-      <Text variant="h2" className="text-primary font-semibold">
+    <form id="login-form" className="flex flex-col items-center gap-8 p-8" onSubmit={onSubmit}>
+      <Text id="login-title" variant="h2" className="text-primary font-semibold">
         {t("Login")}
       </Text>
 
-      <div className="flex flex-col items-center gap-4 w-full">
+      <div id="login-inputs" className="flex flex-col items-center gap-4 w-full">
         <Input
+          id="email-input"
           className="w-full"
           label={t("Username")}
           name="email"
@@ -36,6 +37,7 @@ function FormPane() {
           startIcon={<Icon>alternate_email</Icon>}
         />
         <PasswordInput
+          id="password-input"
           className="w-full"
           label={t("Password")}
           name="password"
@@ -44,17 +46,18 @@ function FormPane() {
         />
       </div>
 
-      <div className="flex flex-col items-center w-full">
-        <Link className="text-sm py-0.5 text-typography" to="/register">
+      <div id="login-links" className="flex flex-col items-center w-full">
+        <Link id="register-link" className="text-sm py-0.5 text-typography" to="/register">
           {t("NewUser")}
         </Link>
-        <Text className="lowercase text-sm text-typography">{t("Or")}</Text>
-        <Link className="text-sm py-0.5 text-typography" to="/forgot-password">
+        <Text id="or-text" className="lowercase text-sm text-typography">{t("Or")}</Text>
+        <Link id="forgot-password-link" className="text-sm py-0.5 text-typography" to="/forgot-password">
           {t("ForgotPassword")}
         </Link>
       </div>
 
       <Button
+        id="login-button"
         className="w-full"
         typeof="submit"
         type="submit"
@@ -67,7 +70,7 @@ function FormPane() {
         {t("SignIn")}
       </Button>
 
-      <Text className="text-sm text-red-500">
+      <Text id="login-error" className="text-sm text-red-500">
         {login.isError && t("Error.InvalidCredentials")}
       </Text>
     </form>
