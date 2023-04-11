@@ -18,4 +18,6 @@ export interface Company {
   created_at?: Date;
   updated_at?: Date;
   deleted_at?: Date;
+  level: number;
+  sprint: number;
 }

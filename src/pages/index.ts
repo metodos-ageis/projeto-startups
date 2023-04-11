@@ -5,3 +5,4 @@ export { Register } from "./Register";
 export { RegisterCompany } from "./RegisterCompany";
 export { UpdateProgress } from "./UpdateProgress";
 export { Dashboard } from "./Dashboard";
+export { MainPage } from "./MainPage";

@@ -21,7 +21,7 @@ function Reason() {
           </li>
         </ol>
       </TableCell>
-      <TableCellInput />
+      <TableCellInput placeholder="Digite aqui..." />
     </TableRow>
   );
 }

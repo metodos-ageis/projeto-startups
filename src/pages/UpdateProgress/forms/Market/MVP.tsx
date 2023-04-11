@@ -1,23 +1,22 @@
 import { TableCell, TableCellInput, TableRow, Text } from "@/components/atoms";
 
-function Canvas() {
+function MVP() {
   return (
     <TableRow>
-      <TableCell noWrap>1.1. Canvas</TableCell>
+      <TableCell noWrap>3.7. MVP</TableCell>
       <TableCell>
         <Text className="text-sm w-96">
-          Verificar se foi realizada a estruturação das hipóteses do modelo de
-          negócios, por meio do Science Business Model, e se as mesmas foram
-          validadas junto aos potenciais clientes da solução.
+          Verificar se foi realizada a construção do MVP e a sua respectiva
+          validação.
         </Text>
       </TableCell>
       <TableCell>
         <Text className="text-sm">
-          Vocês já estruturam o Canvas com as hipóteses do negócio? Elas já
-          foram validadas?
+          Como você validou as hipóteses do seu modelo de negócio? Foi
+          construído um MVP para testar a sua solução? Como foi o processo de
+          validação do MVP?
         </Text>
       </TableCell>
-      <TableCellInput placeholder="Digite aqui..." />
       <TableCellInput placeholder="Digite aqui..." />
       <TableCellInput placeholder="Digite aqui..." />
       <TableCellInput placeholder="Digite aqui..." />
@@ -28,4 +27,4 @@ function Canvas() {
   );
 }
 
-export default Canvas;
+export default MVP;

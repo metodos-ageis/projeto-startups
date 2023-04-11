@@ -1,23 +1,20 @@
 import { TableCell, TableCellInput, TableRow, Text } from "@/components/atoms";
 
-function Canvas() {
+function RevenueModel() {
   return (
     <TableRow>
-      <TableCell noWrap>1.1. Canvas</TableCell>
+      <TableCell noWrap>3.6. Modelo de receita</TableCell>
       <TableCell>
         <Text className="text-sm w-96">
-          Verificar se foi realizada a estruturação das hipóteses do modelo de
-          negócios, por meio do Science Business Model, e se as mesmas foram
-          validadas junto aos potenciais clientes da solução.
+          Verificar se a equipe definiu um modelo de receita a partir da
+          valiação com potenciais clientes.
         </Text>
       </TableCell>
       <TableCell>
         <Text className="text-sm">
-          Vocês já estruturam o Canvas com as hipóteses do negócio? Elas já
-          foram validadas?
+          Qual o modelo de receita e como ele foi definido?
         </Text>
       </TableCell>
-      <TableCellInput placeholder="Digite aqui..." />
       <TableCellInput placeholder="Digite aqui..." />
       <TableCellInput placeholder="Digite aqui..." />
       <TableCellInput placeholder="Digite aqui..." />
@@ -28,4 +25,4 @@ function Canvas() {
   );
 }
 
-export default Canvas;
+export default RevenueModel;

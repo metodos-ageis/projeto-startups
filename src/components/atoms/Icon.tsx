@@ -10,7 +10,15 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
     | "extra-small"
     | "small"
     | "large"
-    | "extra-large";
+    | "extra-large"
+    | "2extra-large"
+    | "3extra-large"
+    | "4extra-large"
+    | "5extra-large"
+    | "6extra-large"
+    | "7extra-large"
+    | "8extra-large"
+    | "9extra-large";
 }
 
 function Icon({ className, fontSize = "default", ...props }: Props) {
@@ -24,6 +32,14 @@ function Icon({ className, fontSize = "default", ...props }: Props) {
         fontSize == "small" && "text-sm",
         fontSize == "large" && "text-lg",
         fontSize == "extra-large" && "text-xl",
+        fontSize == "2extra-large" && "text-2xl",
+        fontSize == "3extra-large" && "text-3xl",
+        fontSize == "4extra-large" && "text-4xl",
+        fontSize == "5extra-large" && "text-5xl",
+        fontSize == "6extra-large" && "text-6xl",
+        fontSize == "7extra-large" && "text-7xl",
+        fontSize == "8extra-large" && "text-8xl",
+        fontSize == "9extra-large" && "text-9xl",
         className
       )}
       {...props}

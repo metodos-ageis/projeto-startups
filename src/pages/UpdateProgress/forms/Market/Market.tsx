@@ -1,6 +1,11 @@
-import Canvas from "./Canvas";
-import Ip from "./IP";
-import Pitch from "./Pitch";
+import CompetitorAnalysis from "./CompetitorAnalysis";
+import Customers from "./Customers";
+import EcosystemMapping from "./EcosystemMapping";
+import FeedbackCycles from "./FeedbackCycles";
+import MarketDynamics from "./MarketDynamics";
+import MVP from "./MVP";
+import ProblemDefinitionAndValidation from "./ProblemDefinitionAndValidation";
+import RevenueModel from "./RevenueModel";
 
 import {
   Table,
@@ -12,11 +17,11 @@ import {
   Text,
 } from "@/components/atoms";
 
-function Structure() {
+function Market() {
   return (
     <>
       <Text variant="h5" className="font-medium">
-        Estrutura
+        Mercado
       </Text>
       <TableContainer elevation={2} className="my-4" bordered>
         <Table className="w-full">
@@ -35,9 +40,14 @@ function Structure() {
             </TableRow>
           </TableHead>
           <TableBody>
-            <Canvas />
-            <Pitch />
-            <Ip />
+            <EcosystemMapping />
+            <ProblemDefinitionAndValidation />
+            <Customers />
+            <CompetitorAnalysis />
+            <MarketDynamics />
+            <RevenueModel />
+            <MVP />
+            <FeedbackCycles />
           </TableBody>
         </Table>
       </TableContainer>
@@ -45,4 +55,4 @@ function Structure() {
   );
 }
 
-export default Structure;
+export default Market;

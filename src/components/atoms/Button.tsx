@@ -12,6 +12,8 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   loading?: boolean;
   disabled?: boolean;
   href?: string;
+  error?: boolean;
+  helperText?: string;
 }
 
 function Button({

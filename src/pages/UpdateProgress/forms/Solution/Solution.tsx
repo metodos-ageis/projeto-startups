@@ -1,6 +1,6 @@
-import Canvas from "./Canvas";
-import Ip from "./IP";
-import Pitch from "./Pitch";
+import DevelopmentStage from "./DevelopmentStage";
+import NeededResources from "./NeededResources";
+import ValueDefinition from "./ValueDefinition";
 
 import {
   Table,
@@ -12,11 +12,11 @@ import {
   Text,
 } from "@/components/atoms";
 
-function Structure() {
+function Solution() {
   return (
     <>
       <Text variant="h5" className="font-medium">
-        Estrutura
+        Solução
       </Text>
       <TableContainer elevation={2} className="my-4" bordered>
         <Table className="w-full">
@@ -35,9 +35,9 @@ function Structure() {
             </TableRow>
           </TableHead>
           <TableBody>
-            <Canvas />
-            <Pitch />
-            <Ip />
+            <DevelopmentStage />
+            <ValueDefinition />
+            <NeededResources />
           </TableBody>
         </Table>
       </TableContainer>
@@ -45,4 +45,4 @@ function Structure() {
   );
 }
 
-export default Structure;
+export default Solution;

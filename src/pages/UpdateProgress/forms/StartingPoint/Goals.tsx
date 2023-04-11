@@ -10,7 +10,7 @@ function Goals() {
           meses? O que vocês querem atingir nesse período?
         </Text>
       </TableCell>
-      <TableCellInput />
+      <TableCellInput placeholder="Digite aqui..." />
     </TableRow>
   );
 }
