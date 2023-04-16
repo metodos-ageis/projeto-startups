@@ -18,13 +18,13 @@ import { AppQueryClient } from "./services";
 import "./i18next";
 
 const router = createBrowserRouter([
-  { path: Routes.HOME, element: <Home />, errorElement: <NotFound /> },
+  { path: Routes.HOME, element: <MainPage /> },
+  { path: Routes.MAIN_PAGE, element: <Home />, errorElement: <NotFound /> },
   { path: Routes.LOGIN, element: <Login /> },
   { path: Routes.REGISTER, element: <Register /> },
   { path: Routes.REGISTER_COMPANY, element: <RegisterCompany /> },
   { path: Routes.UPDATE_PROGRESS, element: <UpdateProgress /> },
   { path: Routes.DASHBOARD, element: <Dashboard /> },
-  { path: Routes.MAIN_PAGE, element: <MainPage /> },
 ]);
 
 function App() {

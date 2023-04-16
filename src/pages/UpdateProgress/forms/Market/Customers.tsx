@@ -22,10 +22,6 @@ function Customers() {
       </TableCell>
       <TableCellInput placeholder="Digite aqui..." />
       <TableCellInput placeholder="Digite aqui..." />
-      <TableCellInput placeholder="Digite aqui..." />
-      <TableCellInput placeholder="Digite aqui..." />
-      <TableCellInput placeholder="Digite aqui..." />
-      <TableCellInput placeholder="Digite aqui..." />
     </TableRow>
   );
 }

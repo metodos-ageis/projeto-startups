@@ -1,5 +1,6 @@
 import { Listbox } from "@headlessui/react";
 import { useState, useMemo, useEffect } from "react";
+import { twMerge } from "tailwind-merge";
 
 import { classnames, getId } from "@/utils";
 
@@ -9,13 +10,21 @@ export interface SelectorItem<T extends React.Key> {
   disabled?: boolean;
 }
 
-interface Props<T extends React.Key> {
+export interface SelectorProps<T extends React.Key> {
   label?: string;
   items: SelectorItem<T>[];
   onChange?: (value: T) => void;
+  className?: string;
+  borderless?: boolean;
 }
 
-function Selector<T extends React.Key>({ label, items, onChange }: Props<T>) {
+function Selector<T extends React.Key>({
+  label,
+  items,
+  onChange,
+  className,
+  borderless,
+}: SelectorProps<T>) {
   const id = useMemo(() => getId(), []);
   const [selected, setSelected] = useState(items[0]);
 
@@ -24,7 +33,7 @@ function Selector<T extends React.Key>({ label, items, onChange }: Props<T>) {
   }, []);
 
   return (
-    <div className={classnames("group flex flex-col gap-1 relative")}>
+    <div className={twMerge("group flex flex-col gap-1 relative", className)}>
       {label && (
         <label
           className="text-sm group-focus-within:text-primary transition-[color] duration-300"
@@ -36,8 +45,8 @@ function Selector<T extends React.Key>({ label, items, onChange }: Props<T>) {
       <Listbox value={selected} onChange={setSelected}>
         <Listbox.Button
           className={classnames(
-            "border-2 border-gray-400 rounded-xl",
-            "w-full flex gap-2 items-center px-2",
+            !borderless && "border-2 border-gray-400 rounded-xl",
+            "w-full h-full flex gap-2 items-center px-2",
             "focus-within:border-primary transition-[border-color] duration-300 py-1"
           )}
         >

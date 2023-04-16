@@ -17,10 +17,6 @@ function MarketDynamics() {
       </TableCell>
       <TableCellInput placeholder="Enter your answer here..." />
       <TableCellInput placeholder="Enter your answer here..." />
-      <TableCellInput placeholder="Enter your answer here..." />
-      <TableCellInput placeholder="Enter your answer here..." />
-      <TableCellInput placeholder="Enter your answer here..." />
-      <TableCellInput placeholder="Enter your answer here..." />
     </TableRow>
   );
 }

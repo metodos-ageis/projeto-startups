@@ -5,4 +5,4 @@ export { default as Stepper } from "./Stepper";
 export { default as StartupBadge } from "./StartupBadge";
 
 export type { StepperRef } from "./Stepper";
-export type { SelectorItem } from "./Selector";
+export type { SelectorProps, SelectorItem } from "./Selector";

@@ -20,10 +20,6 @@ function CompetitorAnalysis() {
       </TableCell>
       <TableCellInput placeholder="Enter competitor name" />
       <TableCellInput placeholder="Enter competitor name" />
-      <TableCellInput placeholder="Enter competitor name" />
-      <TableCellInput placeholder="Enter competitor name" />
-      <TableCellInput placeholder="Enter competitor name" />
-      <TableCellInput placeholder="Enter competitor name" />
     </TableRow>
   );
 }
