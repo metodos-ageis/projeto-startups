@@ -7,7 +7,7 @@ function LogoPane() {
 
   return (
     <div className="flex flex-col gap-8">
-      <img src="assets/logo.jpeg" className="w-64 mb-8" />
+      <img src="/assets/logo.jpeg" className="w-64 mb-8" />
       <div>
         <Text className="text-typography">
           <Trans t={t} i18nKey="Welcome.Title" />
@@ -25,8 +25,8 @@ function LogoPane() {
         </Text>
       </div>
       <div className="flex items-center mt-8 gap-8">
-        <img src="assets/logo-senac-pe.png" className="w-32" />
-        <img src="assets/logo-ufrpe.jpg" className="w-28" />
+        <img src="/assets/logo-senac-pe.png" className="w-32" />
+        <img src="/assets/logo-ufrpe.jpg" className="w-28" />
       </div>
     </div>
   );

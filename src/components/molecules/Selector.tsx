@@ -52,7 +52,7 @@ function Selector<T extends React.Key>({
         >
           {selected?.name ?? "-"}
         </Listbox.Button>
-        <Listbox.Options className="absolute top-[100%] left-0 right-0 bg-white shadow-lg rounded-xl overflow-hidden">
+        <Listbox.Options className="absolute z-50 top-[100%] left-0 right-0 bg-white shadow-lg rounded-xl overflow-hidden">
           {items.map((item) => (
             <Listbox.Option
               key={item.id}

@@ -1,5 +1,6 @@
 import { Market, Solution, StartingPoint, Structure } from "./forms";
 
+import { withCredentials } from "@/components/hoc";
 import { StartupHeader } from "@/components/organisms";
 
 function UpdateProgress() {
@@ -16,4 +17,4 @@ function UpdateProgress() {
   );
 }
 
-export default UpdateProgress;
+export default withCredentials(UpdateProgress);

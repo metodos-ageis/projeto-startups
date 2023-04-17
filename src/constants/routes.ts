@@ -1,9 +1,12 @@
 export default {
   HOME: "/",
-  DASHBOARD: "/dashboard",
-  UPDATE_PROGRESS: "/update-progress",
   LOGIN: "/login",
   REGISTER: "/register",
   REGISTER_COMPANY: "/register-company",
-  MAIN_PAGE: "/main-page",
+  COMPANY: {
+    SELF: ":companyId",
+    DASHBOARD: "dashboard",
+    UPDATE_PROGRESS: "update-progress",
+    CONTROL_PANEL: "control-panel",
+  },
 };

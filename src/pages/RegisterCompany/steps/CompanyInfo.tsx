@@ -1,11 +1,11 @@
-import { ChangeEvent } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Input, TextArea } from "@/components/atoms";
 import { Selector } from "@/components/molecules";
 import type { SelectorItem } from "@/components/molecules";
-import { useEventCallback, useEventListener } from "@/hooks";
+import { useEventListener } from "@/hooks";
 import { useCompanyFormField } from "@/store";
+import { masked } from "@/utils/validation";
 
 const sectors: SelectorItem<string>[] = [
   { id: "tech", name: "Tecnologia" },
@@ -19,9 +19,8 @@ function CompanyInfo() {
   const onChangeTitle = useEventListener(setTitle);
 
   const [cnpj, setCnpj] = useCompanyFormField("cnpj");
-  const onChangeCnpj = useEventCallback(
-    (event: ChangeEvent<HTMLInputElement>) =>
-      setCnpj(event.target.valueAsNumber)
+  const onChangeCnpj = useEventListener((value) =>
+    setCnpj(value.replace(/\D/g, ""))
   );
 
   const [, setSector] = useCompanyFormField("sector");
@@ -43,7 +42,7 @@ function CompanyInfo() {
         type="text"
         label={t("Form.Cnpj")}
         onChange={onChangeCnpj}
-        value={cnpj}
+        value={masked(cnpj, "##.###.###/####-##")}
       />
       <Selector items={sectors} label={t("Form.Sector")} onChange={setSector} />
       <TextArea

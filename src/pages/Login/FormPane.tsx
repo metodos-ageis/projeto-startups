@@ -62,7 +62,6 @@ function FormPane() {
         loading={login.isLoading}
         disabled={!email || !password}
         error={login.isError}
-        helperText={login.error ? t("Error.InvalidCredentials") : undefined}
       >
         {t("SignIn")}
       </Button>

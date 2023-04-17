@@ -1,4 +1,4 @@
-import { SyntheticEvent, useMemo, useRef, useState } from "react";
+import { SyntheticEvent, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
@@ -11,7 +11,7 @@ import { Stepper } from "@/components/molecules";
 import type { StepperRef } from "@/components/molecules";
 import { useError, useEventCallback } from "@/hooks";
 import { useCreateCompany } from "@/services/company";
-import { useCompanyFormData } from "@/store";
+import { useCompanyForm, useCompanyFormData } from "@/store";
 
 function RegisterCompany() {
   const { t } = useTranslation(["common", "registerStartup"]);
@@ -19,11 +19,8 @@ function RegisterCompany() {
 
   const stepperRef = useRef<StepperRef>(null);
 
-  const next = useEventCallback(() => stepperRef.current?.next());
-  const previous = useEventCallback(() => stepperRef.current?.previous());
-
   const create = useCreateCompany(() => {
-    navigate("/");
+    navigate(-1);
   });
   const error = useError(create.error, 0);
 
@@ -47,12 +44,23 @@ function RegisterCompany() {
   const [hasPrevious, setHasPrevious] = useState(false);
   const [hasNext, setHasNext] = useState(true);
 
+  const next = useEventCallback(() => stepperRef.current?.next());
+  const previous = useEventCallback(() => {
+    if (hasPrevious) stepperRef.current?.previous();
+    else navigate(-1);
+  });
+
   const onChangeStep = useEventCallback((step: number) => {
     setHasPrevious(step > 1);
     setHasNext(step < steps.length);
   });
 
   const payload = useCompanyFormData();
+  const clear = useCompanyForm((state) => state.clear);
+
+  useEffect(() => {
+    return () => clear();
+  }, []);
 
   const onSubmit = useEventCallback((e: SyntheticEvent) => {
     e.preventDefault();
@@ -68,12 +76,7 @@ function RegisterCompany() {
           </Text>
           <Stepper ref={stepperRef} steps={steps} onChange={onChangeStep} />
           <div className="flex justify-between items-center mt-8">
-            <Button
-              onClick={previous}
-              variant="outlined"
-              disabled={!hasPrevious}
-              type="button"
-            >
+            <Button onClick={previous} variant="outlined" type="button">
               {t("registerStartup:Controls.Back")}
             </Button>
             {hasNext ? (
@@ -104,7 +107,7 @@ function RegisterCompany() {
           </div>
         </form>
         <div className="w-full flex flex-col items-center">
-          <img src="assets/logo.jpeg" className="w-96" />
+          <img src="/assets/logo.jpeg" className="w-96" />
         </div>
       </div>
       <Waves size="sm" />

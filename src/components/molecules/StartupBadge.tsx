@@ -11,7 +11,7 @@ function StartupBadge() {
         "bg-slate-200 py-2 px-6 rounded-xl"
       )}
     >
-      <img src="assets/tmp/startup.svg" className="w-11 h-11" />
+      <img src="/assets/tmp/startup.svg" className="w-11 h-11" />
       <div className="w-full flex justify-between items-center">
         <div>
           <Text

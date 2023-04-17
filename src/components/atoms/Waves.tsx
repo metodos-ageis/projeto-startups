@@ -11,7 +11,7 @@ function Waves({ className, size = "lg" }: Props) {
   return (
     <Box
       as="img"
-      src="assets/waves.svg"
+      src="/assets/waves.svg"
       className={twMerge(
         "absolute left-0 z-0",
         size === "sm" && "bottom-[-7.5rem]",

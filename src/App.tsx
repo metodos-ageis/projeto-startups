@@ -11,20 +11,29 @@ import {
   Register,
   RegisterCompany,
   UpdateProgress,
-  MainPage,
+  ControlPanel,
 } from "./pages";
 import { AppQueryClient } from "./services";
 
 import "./i18next";
 
 const router = createBrowserRouter([
-  { path: Routes.HOME, element: <MainPage /> },
-  { path: Routes.MAIN_PAGE, element: <Home />, errorElement: <NotFound /> },
+  { path: Routes.HOME, element: <Home /> },
   { path: Routes.LOGIN, element: <Login /> },
   { path: Routes.REGISTER, element: <Register /> },
   { path: Routes.REGISTER_COMPANY, element: <RegisterCompany /> },
-  { path: Routes.UPDATE_PROGRESS, element: <UpdateProgress /> },
-  { path: Routes.DASHBOARD, element: <Dashboard /> },
+  {
+    path: Routes.COMPANY.SELF,
+    children: [
+      {
+        path: Routes.COMPANY.CONTROL_PANEL,
+        element: <ControlPanel />,
+      },
+      { path: Routes.COMPANY.UPDATE_PROGRESS, element: <UpdateProgress /> },
+      { path: Routes.COMPANY.DASHBOARD, element: <Dashboard /> },
+    ],
+  },
+  { path: "*", element: <NotFound /> },
 ]);
 
 function App() {

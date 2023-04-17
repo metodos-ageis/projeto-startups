@@ -34,7 +34,7 @@ export class Api {
     headers.append("Content-Type", "application/json");
 
     if (credentials) {
-      headers.append("Authorization", `Bearer ${credentials}`);
+      headers.append("token", credentials);
     }
 
     return headers;

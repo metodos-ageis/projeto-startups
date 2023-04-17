@@ -1,7 +1,7 @@
 import { ChangeEvent } from "react";
 import { useTranslation } from "react-i18next";
 
-import { Input, RadioGroup } from "@/components/atoms";
+import { Input, RadioGroup, Text } from "@/components/atoms";
 import { useEventCallback, useEventListener } from "@/hooks";
 import { useCompanyFormField } from "@/store";
 
@@ -35,9 +35,10 @@ function Resources() {
       <Input
         name="initial-capital"
         type="number"
+        startIcon={<Text variant="caption">R$</Text>}
         label={t("Form.Monetary")}
         onChange={onChangeCapital}
-        value={capital}
+        value={Number.isNaN(capital) ? "" : capital}
       />
       <Input
         name="incoming-model"

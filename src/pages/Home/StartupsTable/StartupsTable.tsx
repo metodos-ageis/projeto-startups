@@ -1,4 +1,4 @@
-import Canvas from "./Canvas";
+import CompanyRow from "./CompanyRow";
 
 import {
   Table,
@@ -9,8 +9,11 @@ import {
   TableRow,
   Text,
 } from "@/components/atoms";
+import { useCompanies } from "@/services/company";
 
 function StartupsTable() {
+  const { data: companies } = useCompanies();
+
   return (
     <>
       <Text variant="h5" className="font-medium">
@@ -27,9 +30,9 @@ function StartupsTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            <TableRow>
-              <Canvas />
-            </TableRow>
+            {companies?.map((company) => (
+              <CompanyRow key={company.id} company={company} />
+            ))}
           </TableBody>
         </Table>
       </TableContainer>

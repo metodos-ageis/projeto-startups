@@ -4,7 +4,7 @@ export interface Company {
   description: string;
   sector: string;
   goal: string;
-  cnpj: number;
+  cnpj: string;
   project_time: number;
   challenges: string;
   team_size: number;
@@ -18,6 +18,6 @@ export interface Company {
   created_at?: Date;
   updated_at?: Date;
   deleted_at?: Date;
-  level: number;
-  sprint: number;
+  // level: number;
+  // sprint: string;
 }
