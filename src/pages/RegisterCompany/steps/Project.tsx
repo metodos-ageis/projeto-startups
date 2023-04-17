@@ -61,10 +61,11 @@ function Project() {
           label={t("Form.ProjectTime")}
           onChange={onChangeTime}
           value={time}
+          min={0}
         />
         <Input
           name="project-start"
-          type="text"
+          type="date"
           label={t("Form.ProjectStarted")}
           onChange={onChangeStart}
           value={start}
