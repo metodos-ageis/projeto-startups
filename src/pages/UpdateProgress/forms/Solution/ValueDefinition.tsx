@@ -1,6 +1,22 @@
+import { useEffect, useState } from "react";
+
+import { scoreItems } from "../common";
+
 import { TableCell, TableCellInput, TableRow, Text } from "@/components/atoms";
+import { TableCellSelector } from "@/components/atoms/table";
+import { useFormState } from "@/hooks";
+import { useProgressForm } from "@/store";
 
 function ValueDefinition() {
+  const [score, setScore] = useState(0);
+  const [feedback, setFeedback] = useFormState("");
+
+  const { setSolutionDefinition } = useProgressForm();
+
+  useEffect(() => {
+    setSolutionDefinition([score, feedback]);
+  }, [score, feedback]);
+
   return (
     <TableRow>
       <TableCell noWrap>
@@ -18,13 +34,16 @@ function ValueDefinition() {
           Quais os benefícios oferecidos pela sua solução (proposta de valor)?
         </Text>
       </TableCell>
-      <TableCellInput placeholder="Digite aqui..." />
-      <TableCellInput placeholder="Digite aqui..." />
-      <TableCellInput placeholder="Digite aqui..." />
-      <TableCellInput placeholder="Digite aqui..." />
-      <TableCellInput placeholder="Digite aqui..." />
-      <TableCellInput placeholder="Digite aqui..." />
-      <TableCellInput placeholder="Digite aqui..." />
+      <TableCellSelector
+        items={scoreItems}
+        placeholder="Digite aqui..."
+        onChange={setScore}
+      />
+      <TableCellInput
+        placeholder="Digite aqui..."
+        value={feedback}
+        onChange={setFeedback}
+      />
     </TableRow>
   );
 }
