@@ -1,6 +1,22 @@
+import { useEffect, useState } from "react";
+
+import { scoreItems } from "../common";
+
 import { TableCell, TableCellInput, TableRow, Text } from "@/components/atoms";
+import { TableCellSelector } from "@/components/atoms/table";
+import { useFormState } from "@/hooks";
+import { useProgressForm } from "@/store";
 
 function MVP() {
+  const [score, setScore] = useState(0);
+  const [feedback, setFeedback] = useFormState("");
+
+  const { setMvp } = useProgressForm();
+
+  useEffect(() => {
+    setMvp([score, feedback]);
+  }, [score, feedback]);
+
   return (
     <TableRow>
       <TableCell noWrap>3.7. MVP</TableCell>
@@ -17,8 +33,16 @@ function MVP() {
           validação do MVP?
         </Text>
       </TableCell>
-      <TableCellInput placeholder="Digite aqui..." />
-      <TableCellInput placeholder="Digite aqui..." />
+      <TableCellSelector
+        items={scoreItems}
+        placeholder="Digite aqui..."
+        onChange={setScore}
+      />
+      <TableCellInput
+        placeholder="Digite aqui..."
+        value={feedback}
+        onChange={setFeedback}
+      />
     </TableRow>
   );
 }
