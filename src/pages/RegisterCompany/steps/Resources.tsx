@@ -33,13 +33,13 @@ function Resources() {
   return (
     <div className="h-80 w-[20rem] flex flex-col gap-1">
       <Input
-        placeholder = "R$ 0,00"
         name="initial-capital"
         type="number"
+        startIcon={<Text variant="caption">R$</Text>}
         step = "0.01"
         label={t("Form.Monetary")}
         onChange={onChangeCapital}
-        value={capital}
+        value={Number.isNaN(capital) ? "" : capital}
         min={0}
       />
       <Input
