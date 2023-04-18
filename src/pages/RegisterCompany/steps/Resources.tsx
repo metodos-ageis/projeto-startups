@@ -36,9 +36,11 @@ function Resources() {
         name="initial-capital"
         type="number"
         startIcon={<Text variant="caption">R$</Text>}
+        step = "0.01"
         label={t("Form.Monetary")}
         onChange={onChangeCapital}
         value={Number.isNaN(capital) ? "" : capital}
+        min={0}
       />
       <Input
         name="incoming-model"
