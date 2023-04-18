@@ -47,7 +47,7 @@ function CompanyInfo() {
       <Selector items={sectors} label={t("Form.Sector")} onChange={setSector} />
       <TextArea
         label={t("Form.Description")}
-        className="h-40"
+        className="h-36"
         value={description}
         onChange={onChangeDescription}
       />

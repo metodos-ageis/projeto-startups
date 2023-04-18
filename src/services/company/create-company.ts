@@ -3,7 +3,6 @@ import { useMutation } from "@tanstack/react-query";
 import { Api, ApiError } from "../api";
 
 import { Company } from "@/models";
-import { sleep } from "@/utils";
 
 export type CreateCompanyPayload = Omit<
   Company,
@@ -11,7 +10,6 @@ export type CreateCompanyPayload = Omit<
 >;
 
 export async function createCompany(payload: CreateCompanyPayload) {
-  await sleep(500);
   return Api.post<Company, CreateCompanyPayload>("company", payload);
 }
 

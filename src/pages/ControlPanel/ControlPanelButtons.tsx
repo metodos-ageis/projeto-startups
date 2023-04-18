@@ -10,14 +10,20 @@ function ControlPanelButtons() {
       <ImageButton
         className="w-44"
         src="/assets/icons/indicator.svg"
-        href={Routes.COMPANY.DASHBOARD}
+        to={Routes.COMPANY.DASHBOARD}
+        detailed
       >
         {t("Panel.Indicators")}
       </ImageButton>
-      <ImageButton className="w-44" src="/assets/icons/feedback.svg">
+      <ImageButton
+        to={Routes.COMPANY.UPDATE_PROGRESS}
+        detailed
+        className="w-44"
+        src="/assets/icons/feedback.svg"
+      >
         {t("Panel.Feedback")}
       </ImageButton>
-      <ImageButton className="w-44" src="/assets/icons/upload.svg">
+      <ImageButton to="#" className="w-44" src="/assets/icons/upload.svg">
         {t("Panel.FileUpload")}
       </ImageButton>
     </div>

@@ -19,7 +19,7 @@ function TableContainer({
     <TableProvider hover={hover} bordered={bordered} striped={striped}>
       <div
         className={twMerge(
-          "rounded-md overflow-auto",
+          "rounded-md",
           elevation === 1 && "shadow-sm",
           elevation === 2 && "shadow-md",
           elevation === 3 && "shadow-lg",

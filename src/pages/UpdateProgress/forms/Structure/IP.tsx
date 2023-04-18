@@ -48,18 +48,6 @@ function Ip() {
           onChange={setFeedback}
         />
       </TableRow>
-      <TableRow>
-        <TableCell>
-          <Text className="text-sm w-96">
-            Verificar os tipos de registros realizados junto ao INPI
-          </Text>
-        </TableCell>
-        <TableCell>
-          <Text className="text-sm">Quais registros foram solicitados?</Text>
-        </TableCell>
-        <TableCellInput placeholder="Digite aqui..." />
-        <TableCellInput placeholder="Digite aqui..." />
-      </TableRow>
     </>
   );
 }

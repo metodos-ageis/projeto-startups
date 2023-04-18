@@ -30,7 +30,7 @@ function Selector<T extends React.Key>({
 
   useEffect(() => {
     onChange?.(selected.id);
-  }, []);
+  }, [selected, onChange]);
 
   return (
     <div className={twMerge("group flex flex-col gap-1 relative", className)}>

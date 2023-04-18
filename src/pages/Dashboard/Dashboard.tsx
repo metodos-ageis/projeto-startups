@@ -1,13 +1,14 @@
 import { ResponsiveLine } from "@nivo/line";
 import moment from "moment";
 import { PropsWithChildren } from "react";
+import { useParams } from "react-router-dom";
 
 import data from "./temp.json";
 
-import { Button, Text } from "@/components/atoms";
+import { Text } from "@/components/atoms";
 import { withCredentials } from "@/components/hoc";
 import { StartupHeader } from "@/components/organisms";
-import { Routes } from "@/constants";
+import { useCompanyMetrics } from "@/services/company";
 
 function ChartContainer({
   title,
@@ -22,10 +23,13 @@ function ChartContainer({
 }
 
 function Dashboard() {
+  const { company_id } = useParams<{ company_id: string }>();
+  const query = useCompanyMetrics(company_id ?? "");
+
   return (
     <>
       <StartupHeader />
-      <div className="flex items-center justify-center flex-col h-full max-w-[60rem] m-auto">
+      <div className="flex items-center justify-center flex-col h-full max-w-[60rem] m-auto mt-8">
         <div className="grid w-full gap-8 grid-cols-2 auto-rows-[24rem]">
           <ChartContainer title="Documentação">
             <ResponsiveLine

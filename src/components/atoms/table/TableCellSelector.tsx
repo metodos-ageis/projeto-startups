@@ -22,7 +22,7 @@ function TableCellSelector<T extends React.Key>({
   return (
     <TableCell {...props} className="p-0 m-0 h-1">
       <Selector
-        className="h-full"
+        className="h-full [&_button]:flex [&_button]:items-center [&_button]:justify-center"
         borderless
         items={items}
         onChange={onChange}

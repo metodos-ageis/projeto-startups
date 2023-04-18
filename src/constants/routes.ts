@@ -4,7 +4,7 @@ export default {
   REGISTER: "/register",
   REGISTER_COMPANY: "/register-company",
   COMPANY: {
-    SELF: ":companyId",
+    SELF: ":company_id",
     DASHBOARD: "dashboard",
     UPDATE_PROGRESS: "update-progress",
     CONTROL_PANEL: "control-panel",

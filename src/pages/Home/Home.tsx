@@ -36,8 +36,11 @@ function Home() {
   return (
     <>
       <div className="pt-32 px-24 mx-24">
-        <div className="grid grid-cols-[1fr_auto_1fr] items-center justify-center gap-4">
-          <img src="/assets/logo.jpeg" className="h-16 col-start-2" />
+        <div className="grid grid-cols-[5rem_auto_5rem] items-center justify-between gap-4">
+          <div />
+          <div className="col-start-2">
+            <img src="/assets/logo.jpeg" className="h-16" />
+          </div>
           <Button variant="text" className="flex gap-1" onClick={logout}>
             <Icon>logout</Icon>
             <span>{t("Logout")}</span>
