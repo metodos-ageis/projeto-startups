@@ -7,7 +7,7 @@ function LogoPane() {
 
   return (
     <div className="flex flex-col gap-8">
-      <img src="/assets/logo.jpeg" className="w-64 mb-8" />
+      <img src="/assets/logo.png" className="w-64 mb-8" />
       <div>
         <Text className="text-typography">
           <Trans t={t} i18nKey="Welcome.Title" />

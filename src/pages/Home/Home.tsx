@@ -27,9 +27,9 @@ const sectors: SelectorItem<string>[] = [
 function Home() {
   const { t } = useTranslation("home");
 
-  const [, setLevel] = useCompanyFormField("level");
-  const [, setSprint] = useCompanyFormField("sprint");
-  const [, setSector] = useCompanyFormField("sector");
+  const [level, setLevel] = useCompanyFormField("level");
+  const [sprint, setSprint] = useCompanyFormField("sprint");
+  const [sector, setSector] = useCompanyFormField("sector");
 
   const logout = useAuth((state) => state.logout);
 
@@ -39,7 +39,7 @@ function Home() {
         <div className="grid grid-cols-[5rem_auto_5rem] items-center justify-between gap-4">
           <div />
           <div className="col-start-2">
-            <img src="/assets/logo.jpeg" className="h-16" />
+            <img src="/assets/logo.png" className="h-16" />
           </div>
           <Button variant="text" className="flex gap-1" onClick={logout}>
             <Icon>logout</Icon>
@@ -60,6 +60,7 @@ function Home() {
               items={levels}
               label={t("Form.Level")}
               onChange={setLevel}
+              value={level}
             />
           </div>
           <div>
@@ -67,6 +68,7 @@ function Home() {
               items={sprints}
               label={t("Form.Sprint")}
               onChange={setSprint}
+              value={sprint}
             />
           </div>
           <div>
@@ -74,6 +76,7 @@ function Home() {
               items={sectors}
               label={t("Form.Sector")}
               onChange={setSector}
+              value={sector}
             />
           </div>
         </div>

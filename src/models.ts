@@ -73,7 +73,7 @@ export interface CompanyProgress {
 }
 
 export interface FieldHistory {
-  date: Date;
+  date: string;
   value: number;
 }
 

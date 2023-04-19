@@ -6,3 +6,4 @@ export { RegisterCompany } from "./RegisterCompany";
 export { UpdateProgress } from "./UpdateProgress";
 export { Dashboard } from "./Dashboard";
 export { Home } from "./Home";
+export { Feedback } from "./Feedback";

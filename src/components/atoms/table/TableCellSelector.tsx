@@ -4,7 +4,7 @@ import TableCell, { TableCellProps } from "./TableCell";
 
 import { Selector, SelectorProps } from "@/components/molecules";
 
-type PickedFields = "items" | "onChange";
+type PickedFields = "items" | "onChange" | "value";
 type Spread<T extends React.Key> = Pick<SelectorProps<T>, PickedFields>;
 type Nest<T extends React.Key> = Omit<SelectorProps<T>, PickedFields>;
 
@@ -17,6 +17,7 @@ interface Props<T extends React.Key>
 function TableCellSelector<T extends React.Key>({
   items,
   onChange,
+  value,
   ...props
 }: Props<T>) {
   return (
@@ -26,6 +27,7 @@ function TableCellSelector<T extends React.Key>({
         borderless
         items={items}
         onChange={onChange}
+        value={value}
       />
     </TableCell>
   );

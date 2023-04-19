@@ -23,7 +23,7 @@ function CompanyInfo() {
     setCnpj(value.replace(/\D/g, ""))
   );
 
-  const [, setSector] = useCompanyFormField("sector");
+  const [sector, setSector] = useCompanyFormField("sector");
 
   const [description, setDescription] = useCompanyFormField("description");
   const onChangeDescription = useEventListener(setDescription);
@@ -44,7 +44,12 @@ function CompanyInfo() {
         onChange={onChangeCnpj}
         value={masked(cnpj, "##.###.###/####-##")}
       />
-      <Selector items={sectors} label={t("Form.Sector")} onChange={setSector} />
+      <Selector
+        items={sectors}
+        label={t("Form.Sector")}
+        onChange={setSector}
+        value={sector}
+      />
       <TextArea
         label={t("Form.Description")}
         className="h-36"

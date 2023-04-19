@@ -6,7 +6,8 @@ function useFormState(
   initialState: string
 ): [
   string,
-  (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
+  (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
+  (state: string) => void
 ] {
   const [state, setState] = useState(initialState);
 
@@ -16,7 +17,7 @@ function useFormState(
     }
   );
 
-  return [state, updateState];
+  return [state, updateState, setState];
 }
 
 export default useFormState;

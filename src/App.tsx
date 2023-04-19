@@ -12,6 +12,7 @@ import {
   RegisterCompany,
   UpdateProgress,
   ControlPanel,
+  Feedback,
 } from "./pages";
 import { AppQueryClient } from "./services";
 
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
       },
       { path: Routes.COMPANY.UPDATE_PROGRESS, element: <UpdateProgress /> },
       { path: Routes.COMPANY.DASHBOARD, element: <Dashboard /> },
+      { path: Routes.COMPANY.FEEDBACK, element: <Feedback /> },
     ],
   },
   { path: "*", element: <NotFound /> },

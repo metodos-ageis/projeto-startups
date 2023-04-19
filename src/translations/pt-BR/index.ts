@@ -4,3 +4,4 @@ export { default as controlPanel } from "./control-panel";
 export { default as registerStartup } from "./register-startup";
 export { default as updateProgress } from "./update-progress";
 export { default as home } from "./home";
+export { default as dashboard } from "./dashboard";

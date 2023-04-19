@@ -107,7 +107,7 @@ function RegisterCompany() {
           </div>
         </form>
         <div className="w-full flex flex-col items-center">
-          <img src="/assets/logo.jpeg" className="w-96" />
+          <img src="/assets/logo.png" className="w-96" />
         </div>
       </div>
       <Waves size="sm" />

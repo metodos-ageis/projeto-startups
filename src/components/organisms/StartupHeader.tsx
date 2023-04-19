@@ -24,7 +24,7 @@ function Header({ className }: Props) {
         <IconButton className="ml-8" onClick={onBack}>
           <Icon fontSize="2extra-large">arrow_back</Icon>
         </IconButton>
-        <img src="/assets/logo.jpeg" className="w-44 my-8" />
+        <img src="/assets/logo.png" className="w-44 my-8" />
         <div className="flex justify-end mr-8">
           <Profile />
         </div>

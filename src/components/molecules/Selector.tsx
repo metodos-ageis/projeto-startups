@@ -1,5 +1,5 @@
 import { Listbox } from "@headlessui/react";
-import { useState, useMemo, useEffect } from "react";
+import { useMemo } from "react";
 import { twMerge } from "tailwind-merge";
 
 import { classnames, getId } from "@/utils";
@@ -16,6 +16,7 @@ export interface SelectorProps<T extends React.Key> {
   onChange?: (value: T) => void;
   className?: string;
   borderless?: boolean;
+  value?: T;
 }
 
 function Selector<T extends React.Key>({
@@ -24,13 +25,15 @@ function Selector<T extends React.Key>({
   onChange,
   className,
   borderless,
+  value,
 }: SelectorProps<T>) {
   const id = useMemo(() => getId(), []);
-  const [selected, setSelected] = useState(items[0]);
+  const selected = useMemo(
+    () => items.find((item) => item.id === value) ?? items[0],
+    [value, items]
+  );
 
-  useEffect(() => {
-    onChange?.(selected.id);
-  }, [selected, onChange]);
+  console.log("teste");
 
   return (
     <div className={twMerge("group flex flex-col gap-1 relative", className)}>
@@ -42,7 +45,7 @@ function Selector<T extends React.Key>({
           {label}
         </label>
       )}
-      <Listbox value={selected} onChange={setSelected}>
+      <Listbox value={value} onChange={onChange}>
         <Listbox.Button
           className={classnames(
             !borderless && "border-2 border-gray-400 rounded-xl",
@@ -56,7 +59,7 @@ function Selector<T extends React.Key>({
           {items.map((item) => (
             <Listbox.Option
               key={item.id}
-              value={item}
+              value={item.id}
               disabled={item.disabled}
               className={({ active, selected }) =>
                 classnames(

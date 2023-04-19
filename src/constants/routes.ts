@@ -8,5 +8,6 @@ export default {
     DASHBOARD: "dashboard",
     UPDATE_PROGRESS: "update-progress",
     CONTROL_PANEL: "control-panel",
+    FEEDBACK: "feedback/:feedback_id",
   },
 };
