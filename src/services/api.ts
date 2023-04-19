@@ -16,7 +16,9 @@ export class ApiError<E = DefaultError> extends Error {
 }
 
 export class Api {
-  static readonly BASE_URL = new URL("http://localhost:3000/");
+  static readonly BASE_URL = new URL(
+    import.meta.env.VITE_API_URL || "http://localhost:3000/"
+  );
 
   private static getURL(path: string, params: Record<string, string>) {
     const url = new URL(path, Api.BASE_URL);
