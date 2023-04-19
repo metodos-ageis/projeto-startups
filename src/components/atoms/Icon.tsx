@@ -21,7 +21,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
     | "9extra-large";
 }
 
-function Icon({ className, fontSize = "default", ...props }: Props) {
+function Icon({ className, fontSize = "default", variant, ...props }: Props) {
   return (
     <div
       className={classnames(
@@ -40,6 +40,7 @@ function Icon({ className, fontSize = "default", ...props }: Props) {
         fontSize == "7extra-large" && "text-7xl",
         fontSize == "8extra-large" && "text-8xl",
         fontSize == "9extra-large" && "text-9xl",
+        variant == "filled" && "material-symbols-filled",
         className
       )}
       {...props}

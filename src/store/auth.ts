@@ -3,10 +3,12 @@ import { persist } from "zustand/middleware";
 
 interface StoreData {
   token: string;
+  email: string;
 }
 
 interface StoreActions {
   setToken: (token: string) => void;
+  setEmail: (email: string) => void;
   logout: () => void;
 }
 
@@ -16,11 +18,15 @@ const useAuth = create(
   persist<Store>(
     (set) => ({
       token: "",
+      email: "",
       logout() {
-        set({ token: "" });
+        set({ token: "", email: "" });
       },
       setToken(token: string) {
         set({ token });
+      },
+      setEmail(email) {
+        set({ email });
       },
     }),
     { name: "auth", version: 0 }

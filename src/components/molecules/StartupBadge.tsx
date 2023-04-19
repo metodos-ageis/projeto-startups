@@ -2,8 +2,10 @@ import { twMerge } from "tailwind-merge";
 
 import { Text } from "../atoms";
 
+import { useCurrentCompany } from "@/services/company";
+
 function StartupBadge() {
-  // TODO: Load startup data
+  const { data: company } = useCurrentCompany();
   return (
     <div
       className={twMerge(
@@ -19,7 +21,7 @@ function StartupBadge() {
             uppercase
             className="font-extrabold tracking-widest whitespace-nowrap"
           >
-            Startup 1
+            {company?.title}
           </Text>
           <Text
             variant="caption"

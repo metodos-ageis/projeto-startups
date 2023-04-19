@@ -6,6 +6,8 @@ export {
   useLastProgress,
   retrieveLastProgress,
 } from "./retrieve-last-progress";
+export { retrieveCompany, useCompany } from "./retrieve-company";
+export { useCurrentCompany } from "./retrieve-current-company";
 
 export type { CreateCompanyPayload } from "./create-company";
 export type { CreateProgressPayload } from "./create-progress";

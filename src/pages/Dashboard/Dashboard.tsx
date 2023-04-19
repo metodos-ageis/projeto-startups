@@ -27,7 +27,7 @@ function Dashboard() {
   const query = useCompanyMetrics(company_id ?? "");
 
   return (
-    <>
+    <div>
       <StartupHeader />
       <div className="flex items-center justify-center flex-col h-full max-w-[60rem] m-auto mt-8">
         <div className="grid w-full gap-8 grid-cols-2 auto-rows-[24rem]">
@@ -266,7 +266,7 @@ function Dashboard() {
         <Button href={Routes.UPDATE_PROGRESS}>Atualizar Progresso</Button> */}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

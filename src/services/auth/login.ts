@@ -20,8 +20,9 @@ export async function login(email: string, password: string) {
 export function useLogin() {
   return useMutation<Response, ApiError, Payload>({
     mutationFn: ({ email, password }: Payload) => login(email, password),
-    onSuccess: (data) => {
+    onSuccess: (data, variables) => {
       useAuth.getState().setToken(data.token);
+      useAuth.getState().setEmail(variables.email);
     },
   });
 }
